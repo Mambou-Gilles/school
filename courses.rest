@@ -1,0 +1,71 @@
+# Localhost
+
+#GET ALL 
+GET http://localhost:5000/courses
+Content-Type: application/json
+
+###
+
+#GET BY ID 
+GET http://localhost:5000/courses/66802c94cd6244d32fa330be
+Content-Type: application/json
+###
+
+# Create Contacts 
+POST http://localhost:5000/courses/create HTTP/1.1
+Content-Type: application/json
+
+{
+"course_id": "ITM 111", 
+"name": "Introduction to Databases", 
+"description": "This course covers the basic elements of database management systems It introduces students to the concepts of logical and physical relationships in a data model and the concepts of inner and outer joins. Students will use a computer aided software engineering (CASE) tool to design, create, and query a database.", 
+"credit_hours": 3 
+}
+
+###
+
+# Put Contanct 
+PUT http://localhost:5000/courses/update/66802c94cd6244d32fa330be HTTP/1.1
+Content-Type: application/json
+
+{
+    "course_id": "MATH 108x",
+    "name": "Math for the Real World",
+    "description": "This course prepares students to understand, analyze, and solve real-life problems that require quantitative reasoning. Topics include the meaning of probabilities, how to read, critique, and apply statistical information found in news reports, public policy debates, consumer reports, and other daily life and professional situations...",
+    "credit_hours": 3
+}
+
+### 
+
+# DeleteContact 
+DELETE http://localhost:5000/courses/delete/66802c94cd6244d32fa330bf HTTP/1.1
+
+# Production
+
+### # GET ALL 
+GET https://ces341-web-service.onrender.com/users
+
+### # GET BY ID 
+GET https://ces341-web-service.onrender.com/users/6669dc78f96ab4e6d3722283
+
+###
+
+# Create Contacts 
+POST https://ces341-web-service.onrender.com/users/create HTTP/1.1 content-type: application/json
+
+{
+"firstName": "Koko", "lastName": "Mambou", "email": "kokm@kolob.com", "favoriteColor": "Green", "birthday": "8/08/2023"
+}
+
+###
+
+
+# Put Contanct 
+PUT https://ces341-web-service.onrender.com/users/update/6669db8df96ab4e6d3722280 HTTP/1.1 Content-Type: application/json
+
+{
+"favoriteColor": "Orange"
+}
+
+### # DeleteContact 
+DELETE https://ces341-web-service.onrender.com/users/delete/666dcde6b9a81f922812be09 HTTP/1.1
