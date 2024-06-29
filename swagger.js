@@ -7,7 +7,7 @@ const doc = {
         "version": "1.0.0",
         "title": "Documentation of my school API"
     },
-    host: "https://project2-spl2.onrender.com",
+    host: "project2-spl2.onrender.com",
     // host: "localhost:5000",
     schemes: ["https", "http"],
     };
