@@ -53,29 +53,47 @@ DELETE http://localhost:5000/students/delete/668085afd47a1024a68b3bc9 HTTP/1.1
 # Production
 
 ### # GET ALL 
-GET https://ces341-web-service.onrender.com/users
+GET https://project2-spl2.onrender.com/students
 
 ### # GET BY ID 
-GET https://ces341-web-service.onrender.com/users/6669dc78f96ab4e6d3722283
+GET https://project2-spl2.onrender.com/students/6680829d47cb7ecc87a752b2
 
 ###
 
 # Create Contacts 
-POST https://ces341-web-service.onrender.com/users/create HTTP/1.1 content-type: application/json
+POST https://project2-spl2.onrender.com/students/create HTTP/1.1 content-type: application/json
 
 {
-"firstName": "Koko", "lastName": "Mambou", "email": "kokm@kolob.com", "favoriteColor": "Green", "birthday": "8/08/2023"
+    "student_id": "S34520",
+    "firstName": "Barry",
+    "lastName": "Allen",
+    "email": "flash@rnfast.com",
+    "enrollmentDate": "2016-03-12T00:00:00.000Z",
+    "courses": [
+      "PHY 304",
+      "MATH 202"
+    ],
+    "status": "active"
 }
 
 ###
 
 
 # Put Contanct 
-PUT https://ces341-web-service.onrender.com/users/update/6669db8df96ab4e6d3722280 HTTP/1.1 Content-Type: application/json
+PUT https://project2-spl2.onrender.com/students/update/6680a45fbb818745d975febf HTTP/1.1 Content-Type: application/json
 
 {
-"favoriteColor": "Orange"
+    "student_id": "S268490",
+    "firstName": "Larson",
+    "lastName": "Philipo",
+    "email": "phill@byui.edu",
+    "enrollmentDate": "2024-01-31T00:00:00.000Z",
+    "courses": [
+      "CSE210",
+      "ENG 301"
+    ],
+    "status": "active"
 }
 
 ### # DeleteContact 
-DELETE https://ces341-web-service.onrender.com/users/delete/666dcde6b9a81f922812be09 HTTP/1.1
+DELETE https://project2-spl2.onrender.com/students/delete/6680a45fbb818745d975febf HTTP/1.1
