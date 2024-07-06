@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const courseController = require("../controllers/courseController");
-const isAuthenticated  = require("../middleware/authenticate");
+const { isAuthenticated } = require("../../middleware/authenticate");
 
 router.get("/", courseController.getAll);
 router.get("/:id", courseController.getSingle);
