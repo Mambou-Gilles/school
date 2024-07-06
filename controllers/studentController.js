@@ -43,7 +43,7 @@ const createStudent = async (req, res, next) => {
         status: req.body.status
     });
     try {
-        const newStudent = await student.save(student);
+        const newStudent = await student.save();
         res.status(201).json(newStudent);
     } catch (err) {
         next(err);

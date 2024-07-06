@@ -40,7 +40,7 @@ const createCourse = async (req, res, next) => {
         credit_hours: req.body.credit_hours,
     });
     try {
-        const newCourse = await course.save(course);
+        const newCourse = await course.save();
         res.status(201).json(newCourse);
     } catch (err) {
         next(err);
