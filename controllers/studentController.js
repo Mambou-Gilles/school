@@ -32,7 +32,7 @@ const getSingle = async (req, res) => {
 
 //@desk Create new student
 //@route POST /create
-const createStudent = async (req, res, next) => {
+const createStudent = async (req, res) => {
     const student = new dbModel({
         student_id: req.body.student_id,
         firstName: req.body.firstName,
@@ -46,7 +46,7 @@ const createStudent = async (req, res, next) => {
         const newStudent = await student.save(student);
         res.status(201).json(newStudent);
     } catch (err) {
-        next(err);
+        console.log("We could not create a student", err)
     }
 }
         
