@@ -32,7 +32,7 @@ const getSingle = async (req, res) => {
 
 //@desk Create new contacts
 //@route POST /create
-const createCourse = async (req, res) => {
+const createCourse = async (req, res, next) => {
     const course = new dbModel({
         course_id: req.body.course_id,
         name: req.body.name,
@@ -43,7 +43,7 @@ const createCourse = async (req, res) => {
         const newCourse = await course.save(course);
         res.status(201).json(newCourse);
     } catch (err) {
-        console.log("We could not create a course", err)
+        next(err);
     }
 }
         
