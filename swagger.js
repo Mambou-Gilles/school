@@ -9,7 +9,8 @@ const doc = {
     },
     host: "project2-spl2.onrender.com",
     // host: "localhost:5000",
-    schemes: ["https", "http"],
+    schemes: ["https", "http"]
+    // schemes: ["http"],
     };
 const outputFile = "./models/swagger.json";
 const endpointsFiles = ["./routes/index.js"]; 
