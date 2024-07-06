@@ -5,7 +5,7 @@ const routes = require("./routes")
 const mongodb = require('./config/db.config');
 const passport = require("passport");
 const session = require("express-session");
-const gitHubStrategy =require("passport-github2").Strategy;
+const GitHubStrategy =require("passport-github2").Strategy;
 const cors = require("cors");
 
 const port = process.env.PORT;
@@ -25,7 +25,7 @@ app.use(express.json())
     .use(cors())
     .use('/', routes);
 
-passport.use(new gitHubStrategy({
+passport.use(new GitHubStrategy({
     clientID: process.env.GITHUB_CLIENT_ID,
     clientSecret: process.env.GITHUB_CLIENT_SECRET,
     callbackURL: process.env.CALLBACK_URL,
@@ -53,7 +53,6 @@ app.get('/github/callback',
         failureRedirect: "api-docs", 
         session: false 
     }), 
-    // Successful authentication, redirect home.
     (req, res) => {
         req.session.user = req.user;
         res.redirect("/");
